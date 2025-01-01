@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eastern Fortune Teller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔮 Eastern Fortune Teller 🔮</h1>
+        <div class="fortune-box">
+            <!-- Step 1: Personal Information -->
+            <div class="step" id="step1">
+                <h2>Personal Information</h2>
+                <form id="personalInfoForm">
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <div class="date-picker">
+                            <div class="date-picker-header">
+                                <button type="button" class="year-nav" id="prevYear">◀</button>
+                                <select id="yearSelect" class="year-select"></select>
+                                <button type="button" class="year-nav" id="nextYear">▶</button>
+                            </div>
+                            <div class="month-grid">
+                                <div class="month" data-month="1">Jan</div>
+                                <div class="month" data-month="2">Feb</div>
+                                <div class="month" data-month="3">Mar</div>
+                                <div class="month" data-month="4">Apr</div>
+                                <div class="month" data-month="5">May</div>
+                                <div class="month" data-month="6">Jun</div>
+                                <div class="month" data-month="7">Jul</div>
+                                <div class="month" data-month="8">Aug</div>
+                                <div class="month" data-month="9">Sep</div>
+                                <div class="month" data-month="10">Oct</div>
+                                <div class="month" data-month="11">Nov</div>
+                                <div class="month" data-month="12">Dec</div>
+                            </div>
+                            <div class="calendar" id="calendar">
+                                <div class="calendar-header">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div class="calendar-days"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthPlace">Place of Birth</label>
+                        <input type="text" id="birthPlace" placeholder="City, Country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit">Next →</button>
+                </form>
+            </div>
+
+            <!-- Step 2: Divination Method -->
+            <div class="step hidden" id="step2">
+                <h2>Choose Divination Method</h2>
+                <form id="methodForm">
+                    <div class="method-grid">
+                        <div class="method-card" data-method="bazi">
+                            <h3>BaZi (八字)</h3>
+                            <p>Four Pillars of Destiny</p>
+                        </div>
+                        <div class="method-card" data-method="yijing">
+                            <h3>Yi Jing (易經)</h3>
+                            <p>Book of Changes</p>
+                        </div>
+                        <div class="method-card" data-method="bagua">
+                            <h3>BaGua (八卦)</h3>
+                            <p>Eight Trigrams</p>
+                        </div>
+                    </div>
+                    <button type="button" class="back-btn">← Back</button>
+                    <button type="submit">Next →</button>
+                </form>
+            </div>
+
+            <!-- Step 3: Specific Questions -->
+            <div class="step hidden" id="step3">
+                <h2>Your Question</h2>
+                <form id="questionForm">
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select category</option>
+                            <option value="career">Career</option>
+                            <option value="relationships">Relationships</option>
+                            <option value="health">Health</option>
+                            <option value="wealth">Wealth</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="question">Your Specific Question</label>
+                        <textarea id="question" rows="3" required></textarea>
+                    </div>
+                    <button type="button" class="back-btn">← Back</button>
+                    <button type="submit">Reveal Fortune</button>
+                </form>
+            </div>
+
+            <!-- Result Section -->
+            <div class="step hidden" id="result">
+                <h2>Your Fortune Reading</h2>
+                <div id="fortune-chart" class="chart-container"></div>
+                <div id="fortune-text"></div>
+                <button type="button" id="newReading">New Reading</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
